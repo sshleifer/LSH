@@ -2,8 +2,8 @@
 from __future__ import print_function
 
 from setuptools import setup, Extension
-
-USE_CYTHON = True
+import os
+USE_CYTHON = not os.getenv('NO_CYTHON', False)
 
 DISTNAME = 'lsh'
 DESCRIPTION = 'A library for performing shingling and LSH for python.'
@@ -25,7 +25,6 @@ extensions = [Extension("lsh.cMinhash",
                         include_dirs=includes)]
 if USE_CYTHON:
     from Cython.Build import cythonize
-
     extensions = cythonize(extensions)
 
 install_deps = ['numpy', 'cython>=0.24.1']
