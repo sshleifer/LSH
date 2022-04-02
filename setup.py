@@ -3,7 +3,7 @@ from __future__ import print_function
 
 from setuptools import setup, Extension
 
-USE_CYTHON = False
+USE_CYTHON = True
 
 DISTNAME = 'lsh'
 DESCRIPTION = 'A library for performing shingling and LSH for python.'
@@ -16,11 +16,9 @@ DOWNLOAD_URL = 'https://github.com/mattilyra/lsh'
 VERSION = '0.3.0'
 
 ext = '.pyx' if USE_CYTHON else '.cpp'
-try:
-    import numpy as np
-    includes = [np.get_include()]
-except ImportError:
-    includes = []
+
+import numpy as np
+includes = [np.get_include()]
 
 extensions = [Extension("lsh.cMinhash",
                         ["lsh/cMinhash{}".format(ext), 'lsh/MurmurHash3.cpp'],
