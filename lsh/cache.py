@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 
-import json
+
 from collections import defaultdict
 import itertools
 import logging
-from copy import deepcopy
+
 
 import numpy as np
-from lsh.minhash import MinHasher
+
 
 __author__ = "Matti Lyra"
 

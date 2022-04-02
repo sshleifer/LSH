@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-try:
-    from functools import lru_cache
-except ImportError:
-    from functools32 import lru_cache
+
+from functools import lru_cache
+
 
 import numpy as np
 

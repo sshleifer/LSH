@@ -1,3 +1,15 @@
+sam
+====
+
+```bash
+
+python setup.py build_ext --inplace
+PYTHONPATH=. pytest lsh/test/test_cache.py
+
+
+
+```
+
 pylsh
 ===========
 
